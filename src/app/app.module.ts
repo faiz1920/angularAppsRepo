@@ -13,11 +13,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
 import { DynamicTableComponent } from './components/dynamic-table/dynamic-table.component';
 import { HomeComponent } from './components/home/home.component';
-
+import { CustomersListComponent } from './components/customers-list/customers-list.component';
+import { CustomersDetailsComponent } from './components/customers-details/customers-details.component';
+import { CustomerSitesListComponent } from './components/customer-sites-list/customer-sites-list.component';
+import { FloatingGenericDashboardComponent } from './dashboards/floating-generic-dashboard/floating-generic-dashboard.component';
+import { GridsterModule } from 'angular2gridster';
+import { Observable } from 'rxjs';
+import { TestDashboardComponent } from './dashboards/test-dashboard/test-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MoodEditor, MoodRenderer, NumericEditor, DynamicTableComponent, HomeComponent
+    MoodEditor, MoodRenderer, NumericEditor, DynamicTableComponent,
+    HomeComponent, CustomersListComponent, CustomersDetailsComponent,
+    CustomerSitesListComponent, FloatingGenericDashboardComponent,
+    TestDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +34,7 @@ import { HomeComponent } from './components/home/home.component';
     HttpModule,
     HttpClientModule,
     AppRoutingModule,
+    GridsterModule,
     AgGridModule.withComponents([MoodEditor, MoodRenderer, NumericEditor])
   ],
   providers: [AppService],

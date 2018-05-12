@@ -112,6 +112,19 @@ export class DynamicTableComponent implements OnInit {
   updateData(event) {
     console.log(JSON.stringify(this.rowData));
   }
+
+
+  sizeToFit() {
+    this.gridApi.sizeColumnsToFit();
+  }
+
+  autoSizeAll() {
+    var allColumnIds = [];
+    this.gridColumnApi.getAllColumns().forEach(function (column) {
+      allColumnIds.push(column.colId);
+    });
+    this.gridColumnApi.autoSizeColumns(allColumnIds);
+  }
 }
 
 function createRowData() {
